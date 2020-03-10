@@ -8,6 +8,22 @@
     <body>
         <h1>This is not a test</h1>
         <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+
+            <a-assets>
+                <a-asset-item id="rfs-obj" src="./objects/rfs.obj"></a-asset-item>
+                <a-asset-item id="rfs-mtl" src="./objects/rfs.mtl"></a-asset-item>
+                <a-asset-item id="beer-obj" src="./objects/beer.obj"></a-asset-item>
+                <a-asset-item id="beer-mtl" src="./objects/beer.mtl"></a-asset-item>
+                <a-asset-item id="chirpus-obj" src="./objects/chirpus.obj"></a-asset-item>
+                <a-asset-item id="chirpus-mtl" src="./objects/chirpus.mtl"></a-asset-item>
+            </a-assets>
+            
+            <a-obj-model src="#rfs-obj" mtl="#rfs-mtl" gps-entity-place="latitude: 42.680550; longitude: -83.131500"></a-obj-model>
+
+            <a-obj-model src="#beer-obj" mtl="#beer-mtl" gps-entity-place="latitude: 42.680444; longitude: -83.131317"></a-obj-model>
+
+            <a-obj-model src="#chirpus-obj" mtl="#chirpus-mtl" gps-entity-place="latitude: 42.447249; longitude: -83.139400"></a-obj-model>
+
             <a-box color="yellow" gps-entity-place="latitude: 42.447249; longitude: -83.139400" />
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
