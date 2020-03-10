@@ -13,7 +13,7 @@
         vr-mode-ui="enabled: false"
         embedded
         arjs='sourceType: webcam; debugUIEnabled: false;'>
-        
+
             <a-assets>
                 <a-asset-item id="beer-obj" src="./objects/beer.obj"></a-asset-item>
                 <a-asset-item id="beer-mtl" src="./objects/beer.mtl"></a-asset-item>
@@ -39,7 +39,8 @@
 
             <a-obj-model src="#beer-obj" mtl="#beer-mtl" scale="0.5 0.5 0.5" gps-entity-place="latitude: 42.679123; longitude: -83.130976" />
 
-            <a-camera gps-camera="minDistance: 2" rotation-reader></a-camera>
+            <a-camera gps-camera="minDistance: 2" rotation-reader
+            simulateLatitude="42.679122" simulateLongitude="-83.130974"></a-camera>
         </a-scene>
     </body>
 </html>
