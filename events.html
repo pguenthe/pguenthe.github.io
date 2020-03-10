@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rochester Full Stack AR Demo</title>
+        <!-- include A-Frame obviously -->
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <!-- include ar.js for A-Frame -->
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+        <!-- custom events script -->
+        <script src="./events.js"></script>
+    </head>
+    <body>
+        <h1>This is not a test</h1>
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+            <a-assets>
+                <a-asset-item id="rfs-obj" src="./objects/rfs.obj"></a-asset-item>
+                <a-asset-item id="rfs-mtl" src="./objects/rfs.mtl"></a-asset-item>
+                <a-asset-item id="beer-obj" src="./objects/beer.obj"></a-asset-item>
+                <a-asset-item id="beer-mtl" src="./objects/beer.mtl"></a-asset-item>
+                <a-asset-item id="chirpus-obj" src="./objects/chirpus.obj"></a-asset-item>
+                <a-asset-item id="chirpus-mtl" src="./objects/chirpus.mtl"></a-asset-item>
+            </a-assets>
+
+            <a-marker emitevents="true" type="pattern" url="markers/pattern-RFS.patt" id="rfs"
+    emitevents="true" cursor="rayOrigin: mouse" raycaster="objects: [data-raycastable]" smooth="true" smoothCount="2">
+                <a-obj-model src="#rfs-obj" mtl="#rfs-mtl" position="0 0.5 -0.2" scale="0.04 0.04 0.04"></a-obj-model>
+            </a-marker>
+
+            <a-marker type="pattern" url="markers/pattern-mug.patt" id="beer"
+            emitevents="true" cursor="rayOrigin: mouse" raycaster="objects: [data-raycastable]" smooth="true" smoothCount="2">
+                <a-obj-model src="#beer-obj" mtl="#beer-mtl" position="0 0 -0.8" scale="0.02 0.02 0.02"></a-obj-model>
+            </a-marker>
+        
+            <a-marker markerhandler type="pattern" url="markers/pattern-gc.patt" id="gc"
+            emitevents="true" cursor="rayOrigin: mouse" raycaster="objects: [data-raycastable]" smooth="true" smoothCount="2">
+                <a-obj-model src="#chirpus-obj" mtl="#chirpus-mtl" position="0 0 -0.8" scale="0.02 0.02 0.02"></a-obj-model>
+            </a-marker>
+            
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
