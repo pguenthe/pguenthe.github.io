@@ -7,13 +7,14 @@
     </head>
     <body>
         <h1>This is not a test</h1>
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+        <a-scene 
+        cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+        raycaster="objects: [gps-entity-place];"
+        vr-mode-ui="enabled: false"
+        embedded
+        arjs='sourceType: webcam; debugUIEnabled: false;'>
 
             <a-assets>
-                <a-asset-item id="rfs-obj" src="./objects/rfs.obj"></a-asset-item>
-                <a-asset-item id="rfs-mtl" src="./objects/rfs.mtl"></a-asset-item>
-                <a-asset-item id="beer-obj" src="./objects/beer.obj"></a-asset-item>
-                <a-asset-item id="beer-mtl" src="./objects/beer.mtl"></a-asset-item>
                 <a-asset-item id="chirpus-obj" src="./objects/chirpus.obj"></a-asset-item>
                 <a-asset-item id="chirpus-mtl" src="./objects/chirpus.mtl"></a-asset-item>
             </a-assets>
@@ -21,7 +22,7 @@
             <a-obj-model src="#chirpus-obj" mtl="#chirpus-mtl" scale="5.0 5.0 5.0" gps-entity-place="latitude: 42.447256; longitude: -83.137044"></a-obj-model>
 
             <a-box color="yellow" gps-entity-place="latitude: 42.446650; longitude: -83.139544" />
-            <a-camera gps-camera rotation-reader></a-camera>
+            <a-camera gps-camera="minDistance: 20" rotation-reader></a-camera>
         </a-scene>
     </body>
 </html>
